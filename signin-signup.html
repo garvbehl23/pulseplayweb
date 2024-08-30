@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - PulsePlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">PulsePlay</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search music...">
+            <button type="button">Search</button>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="side-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="likedsongs.html">Liked Songs</a></li>
+                <li><a href="signin-signup.html">Sign In / Sign Up</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="auth-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="showTab('signin')">Sign In</button>
+                    <button class="tab-button" onclick="showTab('signup')">Sign Up</button>
+                </div>
+                <div id="signin" class="auth-form">
+                    <h2>Sign In</h2>
+                    <form>
+                        <label for="signin-email">Email:</label>
+                        <input type="email" id="signin-email" name="email" required>
+
+                        <label for="signin-password">Password:</label>
+                        <input type="password" id="signin-password" name="password" required>
+
+                        <button type="submit">Sign In</button>
+                    </form>
+                    <p>Don't have an account?
+                        <a href="javascript:void(0);" onclick="showTab"></a>
+                        <p>Don't have an account? <a href="javascript:void(0);" onclick="showTab('signup')">Sign Up</a></p>
+                </div>
+                <div id="signup" class="auth-form" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <form>
+                        <label for="signup-email">Email:</label>
+                        <input type="email" id="signup-email" name="email" required>
+
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" name="password" required>
+
+                        <label for="signup-confirm-password">Confirm Password:</label>
+                        <input type="password" id="signup-confirm-password" name="confirm-password" required>
+
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="javascript:void(0);" onclick="showTab('signin')">Sign In</a></p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 PulsePlay. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+    <script>
+        function showTab(tabName) {
+            document.getElementById('signin').style.display = tabName === 'signin' ? 'block' : 'none';
+            document.getElementById('signup').style.display = tabName === 'signup' ? 'block' : 'none';
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.toggle('active', button.textContent.trim().toLowerCase() === tabName);
+            });
+        }
+    </script>
+</body>
+
+</html>

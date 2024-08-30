@@ -1,0 +1,20 @@
+{
+    "name": "pulseplay",
+    "version": "1.0.0",
+    "description": "A music player web app",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.4"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.7.5",
+        "cookie-parser": "^1.4.6",
+        "express": "^4.19.2"
+    }
+}
